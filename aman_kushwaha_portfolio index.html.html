@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aman Kushwaha — Working Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#1a1208;--muted:#6b5c44;--accent:#b5470c;--gold:#d4892a;--cream:#faf7f2;--sand:#e8dece;--border:#d9ceba;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+.serif{font-family:'Playfair Display',serif}
+
+.hero{padding:3.5rem 2rem 2.5rem;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;max-width:900px;margin:0 auto}
+.hero-tag{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:.75rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:2.6rem;line-height:1.1;font-weight:700;margin-bottom:.5rem}
+.hero-sub{font-size:1rem;color:var(--muted);font-weight:300;margin-bottom:1.25rem;max-width:520px}
+.hero-contact{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}
+.ctag{font-size:12px;padding:4px 10px;border:1px solid var(--border);border-radius:20px;color:var(--muted)}
+.hero-badge{background:var(--accent);color:#fff;font-size:11px;font-weight:500;padding:.35rem .85rem;border-radius:3px;letter-spacing:.04em;display:inline-block;margin-bottom:.5rem}
+.years-box{text-align:center;padding:1.25rem 1.5rem;border:1px solid var(--border);border-radius:8px;background:#fff;min-width:120px}
+.years-num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:700;color:var(--accent);line-height:1}
+.years-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:.3rem}
+
+.stats-bar{background:#fff;border-bottom:1px solid var(--border);padding:1.5rem 2rem}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.stat{text-align:center;padding:.75rem .5rem;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--accent)}
+.stat-l{font-size:11px;color:var(--muted);line-height:1.3;margin-top:.2rem}
+
+.wrap{max-width:900px;margin:0 auto;padding:2.5rem 2rem}
+.sec-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.4rem}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:1.5rem;border-bottom:1px solid var(--border);padding-bottom:.75rem}
+
+.timeline{position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.titem{margin-bottom:2rem;position:relative}
+.titem::before{content:'';position:absolute;left:-1.5rem;top:.35rem;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-left:-3.5px;border:2px solid var(--cream)}
+.tdate{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem}
+.torg{font-size:14px;color:var(--muted);margin-bottom:.15rem}
+.ttitle{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.6rem}
+.tbullets{list-style:none;padding:0}
+.tbullets li{font-size:13.5px;color:var(--muted);padding:.2rem 0 .2rem .9rem;position:relative;line-height:1.5}
+.tbullets li::before{content:'—';position:absolute;left:0;color:var(--border)}
+
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem}
+.proj{border:1px solid var(--border);border-radius:8px;padding:1.25rem;background:#fff}
+.proj-tag{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+.proj h3{font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:.5rem;line-height:1.3}
+.proj p{font-size:13px;color:var(--muted);line-height:1.55}
+.proj-impact{margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--border);display:flex;gap:.8rem;flex-wrap:wrap}
+.pill{font-size:11px;background:var(--sand);color:var(--muted);padding:3px 9px;border-radius:20px}
+
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.skill-row{display:flex;align-items:center;gap:.75rem;padding:.6rem .75rem;border:1px solid var(--border);border-radius:6px;background:#fff}
+.skill-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.skill-name{font-size:13px;color:var(--ink)}
+
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.edu-card{border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;background:#fff}
+.edu-deg{font-size:13px;font-weight:500;margin-bottom:.2rem}
+.edu-inst{font-size:12px;color:var(--muted)}
+.edu-meta{font-size:11px;color:var(--gold);margin-top:.3rem}
+
+.lang-row{display:flex;gap:1rem;flex-wrap:wrap}
+.lang-chip{padding:.4rem 1rem;border:1px solid var(--border);border-radius:20px;font-size:13px;background:#fff}
+.lang-chip span{font-size:11px;color:var(--muted);margin-left:.3rem}
+
+.footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:12px;color:var(--muted);max-width:900px;margin:0 auto}
+.footer strong{color:var(--accent)}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:.75rem 2rem}
+.nav-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{font-size:12px;text-decoration:none;color:var(--muted);letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cv{background:var(--accent);color:#fff !important;padding:.35rem .9rem;border-radius:4px;font-size:12px;font-weight:500;text-decoration:none;transition:background .2s}
+.nav-cv:hover{background:#8a3800 !important}
+
+.contact-section{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 2rem}
+.contact-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-info p{font-size:14px;color:var(--muted);margin-bottom:1.5rem;line-height:1.7}
+.cinfo-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem;font-size:13px;color:var(--ink)}
+.cinfo-icon{width:32px;height:32px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.cinfo-label{font-size:11px;color:var(--muted);display:block}
+.cinfo-val{font-weight:500}
+.social-row{display:flex;gap:.6rem;margin-top:1.25rem}
+.social-btn{padding:.4rem .9rem;border:1px solid var(--border);border-radius:4px;font-size:12px;text-decoration:none;color:var(--muted);transition:all .2s}
+.social-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+.cf-form{display:flex;flex-direction:column;gap:.85rem}
+.cf-form input,.cf-form textarea,.cf-form select{width:100%;padding:.65rem .85rem;border:1px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:13px;background:var(--cream);color:var(--ink);outline:none;transition:border .2s;resize:none}
+.cf-form input:focus,.cf-form textarea:focus{border-color:var(--accent)}
+.cf-form label{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;display:block}
+.cf-submit{background:var(--accent);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:background .2s;letter-spacing:.04em}
+.cf-submit:hover{background:#8a3800}
+.cf-success{display:none;background:#eaf3de;border:1px solid #c0dd97;border-radius:6px;padding:.85rem 1rem;font-size:13px;color:#3b6d11;margin-top:.5rem}
+
+@media(max-width:640px){
+  .hero{grid-template-columns:1fr}.stats-inner{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.projects{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.edu-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr;gap:2rem}.nav-links a:not(.nav-cv){display:none}
+}
+
+@media(max-width:640px){
+  .hero{grid-template-columns:1fr}.stats-inner{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.projects{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.edu-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">Aman Kushwaha</a>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="/cdn-cgi/l/email-protection#20414d414e0e4b555348574148411214151360474d41494c0e434f4d" class="nav-cv">📩 Hire Me</a>
+    </div>
+  </div>
+</nav>
+
+<div id="home">
+  <div>
+    <div class="hero-tag">Working Portfolio · 2023 – 2026</div>
+    <h1 class="serif">Aman Kushwaha</h1>
+    <p class="hero-sub">Social Work Professional &amp; Development Program Specialist — driving grassroots change across Madhya Pradesh &amp; Assam</p>
+    <div class="hero-contact">
+      <span class="ctag">9589624981</span>
+      <span class="ctag"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="02636f636c2c6977716a75636a633036373142656f636b6e2c616d6f">[email&#160;protected]</a></span>
+      <span class="ctag">Nagod, Satna, Madhya Pradesh</span>
+    </div>
+    <div>
+      <span class="hero-badge">Gandhi Fellow · Batch 17 · Piramal Foundation</span><br>
+      <span class="hero-badge" style="margin-top:.4rem;background:#8a3800">MSW · MGCGV · 7.8 CGPA</span>
+    </div>
+  </div>
+  <div class="years-box">
+    <div class="years-num">3+</div>
+    <div class="years-label">years of<br>field work</div>
+  </div>
+</div>
+
+</div><!-- end #home -->
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-n">50+</div><div class="stat-l">Villages, Darrang, Assam</div></div>
+    <div class="stat"><div class="stat-n">200+</div><div class="stat-l">Frontline workers trained</div></div>
+    <div class="stat"><div class="stat-n">17,520</div><div class="stat-l">Women enrolled in LBY</div></div>
+    <div class="stat"><div class="stat-n">97,957</div><div class="stat-l">Women in Mahila Chaupal</div></div>
+    <div class="stat"><div class="stat-n">97.8%</div><div class="stat-l">Village coverage, Satna, Madhya Pradesh</div></div>
+  </div>
+</div>
+
+<div class="wrap" id="experience">
+
+  <div class="timeline">
+    <div class="titem">
+      <div class="tdate">March 2024 – Present</div>
+      <div class="torg">Piramal Foundation · Darrang, Assam</div>
+      <div class="ttitle serif">Gandhi Fellow — Batch 17</div>
+      <ul class="tbullets">
+        <li>Leading health, education &amp; development initiatives across 50+ villages in Darrang, Assam in coordination with district administration</li>
+        <li>Trained 200+ frontline workers on digital platforms (Utprerana, ANMOL, U-WIN, ABHA, NCD Portal), improving data adoption by 40%</li>
+        <li>Community mobilization campaigns reaching 2,000+ beneficiaries for last-mile delivery</li>
+        <li>Facilitating multi-stakeholder meetings across blocks, district officials, and community leaders</li>
+        <li>Led child labour to school enrolment project in Ganeshpur village — 20+ children enrolled through flexible attendance model</li>
+      </ul>
+    </div>
+    <div class="titem">
+      <div class="tdate">Feb 2023 – Feb 2024</div>
+      <div class="torg">CMYIP · Govt of MP (AIGGPA, Bhopal) · Satna, MP</div>
+      <div class="ttitle serif">Block Coordinator &amp; District Execution Unit Member</div>
+      <ul class="tbullets">
+        <li>Core member of District Execution Unit across 100+ panchayats; coordinated 230+ interns district-wide</li>
+        <li>Led Ladli Behna Yojana implementation — 17,520 women beneficiaries enrolled and receiving benefits</li>
+        <li>Mahila Chaupal: 97,957 women across 1,719 villages (86.3% coverage) for livelihood schemes, SHG group benefits &amp; digital literacy; 3,581 report cards distributed</li>
+        <li>Village profiling of 1,948/1,993 villages (97.8% coverage) across 8 blocks of Satna, Madhya Pradesh — mapping government scheme access gaps</li>
+        <li>Youth for Democracy: registered 150+ first-time voters; managed Jan Seva Abhiyan impacting 3,000+ citizens</li>
+        <li>Promoted progressive education in rural &amp; remote areas by conducting capacity building sessions across 25 schools for 50+ teachers — covering modern pedagogy and student engagement techniques, resulting in a 10% improvement in school results within one year</li>
+        <li>Organised 100+ Gram Sabhas across villages with a 15-member team, educating communities on gram-level issues, the importance of Gram Sabha participation, and Panchayati Raj governance systems — strengthening citizen-government dialogue at the grassroots</li>
+        <li>Represented Satna at CM &amp; Home Minister programmes; coordinated district-level training workshops and boot camps for 230+ interns</li>
+      </ul>
+    </div>
+    <div class="titem">
+      <div class="tdate">March 2024 – May 2024</div>
+      <div class="torg">EXIS My India · Maharashtra</div>
+      <div class="ttitle serif">Field Survey Team Lead</div>
+      <ul class="tbullets">
+        <li>Led and trained 5-member survey team for political &amp; socio-economic research project</li>
+        <li>Conducted field surveys and designed digital data collection tools using KoBo Toolbox for real-time monitoring, validation, and reporting of socio-economic indicators across communities</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div style="background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 2rem" id="projects">
+  <div style="max-width:900px;margin:0 auto">
+    <div class="sec-label">Field projects</div>
+    <div class="sec-title serif">Key initiatives</div>
+    <div class="projects">
+      <div class="proj">
+        <div class="proj-tag">Child Rights · Darrang, Assam</div>
+        <h3 class="serif">From Brick Kilns to Classrooms</h3>
+        <p>Transformed child labour into educational opportunity in Ganeshpur village through 6 months of patient community engagement — negotiating with brick kiln owners, building parent trust, and designing a flexible two-days-per-week school model.</p>
+        <div class="proj-impact">
+          <span class="pill">20+ children enrolled</span>
+          <span class="pill">6 stakeholder groups</span>
+          <span class="pill">Zero → school attendance</span>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="proj-tag">Community Immersion · Sipajhar, Darrang</div>
+        <h3 class="serif">Deep Community Immersion: Tekeliakur Grant</h3>
+        <p>Lived within a host community in Suktahuri village for full immersion. Participated in agricultural labour, conducted awareness camps on health/hygiene and education, and identified critical gaps in healthcare, sanitation, and secondary schooling.</p>
+        <div class="proj-impact">
+          <span class="pill">7,000-population village</span>
+          <span class="pill">Awareness camps held</span>
+          <span class="pill">Multi-issue mapping</span>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="proj-tag">Women's Empowerment · Satna, MP</div>
+        <h3 class="serif">Mahila Chaupal — Women's Awareness Initiative</h3>
+        <p>Organised village-level chaupal sessions across 1,719 villages educating women on government schemes — E-KYC &amp; DBT (47.5% of issues), pension rights (29.7%), disability certificates (16.9%), and ration cards (5.9%). Sessions focused on livelihood schemes, SHG group benefits, and digital literacy to strengthen women's economic independence. Resolved medical and KYC problems on-the-spot; 10,773 elderly &amp; disabled participants also covered. Distributed 3,581 government report cards directly to beneficiaries.</p>
+        <div class="proj-impact">
+          <span class="pill">97,957 women reached</span>
+          <span class="pill">10,773 elderly &amp; disabled</span>
+          <span class="pill">1,719 villages · 86.3%</span>
+          <span class="pill">3,581 report cards</span>
+          <span class="pill">SHG &amp; livelihood focus</span>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="proj-tag">Rural Governance · Satna, MP</div>
+        <h3 class="serif">Gram Panchayat Village Profiling</h3>
+        <p>Led door-to-door survey across 1,948 of 1,993 villages (97.8%) with a team of 120 Janseva Mitras across 8 blocks of Satna, Madhya Pradesh. Mapped beneficiary gaps in Ayushman Card, Ration Card, Sambal, PM &amp; CM Kisan Samman Nidhi, Ladli Laxmi, PM Awas Yojana, pension &amp; Udyam Kranti schemes. Also assessed basic village infrastructure — ponds, community buildings, health centres, and water &amp; sanitation facilities. Collected primary demands of each village and compiled detailed block-wise reports for district administration, enabling data-driven scheme delivery.</p>
+        <div class="proj-impact">
+          <span class="pill">97.8% village coverage</span>
+          <span class="pill">1,948 villages surveyed</span>
+          <span class="pill">120 interns mobilised</span>
+          <span class="pill">8 blocks, Satna MP</span>
+          <span class="pill">Infrastructure mapping</span>
+          <span class="pill">10 schemes tracked</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" id="skills">
+  <div class="sec-label">Capabilities</div>
+  <div class="sec-title serif">Core competencies</div>
+  <div class="skills-grid">
+    <div class="skill-row"><div class="skill-dot"></div><span class="skill-name">Community Mobilization &amp; Engagement</span></div>
+    <div class="skill-row"><div class="skill-dot"></div><span class="skill-name">Program Implementation &amp; Monitoring</span></div>
+    <div class="skill-row"><div class="skill-dot"></div><span class="skill-name">Frontline Worker Training &amp; Coordination</span></div>
+    <div class="skill-row"><div class="skill-dot"></div><span class="skill-name">Stakeholder &amp; Government Liaison</span></div>
+    <div class="skill-row"><div class="skill-dot"></div><span class="skill-name">Digital Health Platform Implementation</span></div>
+    <div class="skill-row"><div class="skill-dot"></div><span class="skill-name">Field Research &amp; Data Collection (KoBo)</span></div>
+    <div class="skill-row"><div class="skill-dot"></div><span class="skill-name">Power BI — Dashboards &amp; Data Visualization</span></div>
+    <div class="skill-row"><div class="skill-dot"></div><span class="skill-name">MS Office 365 &amp; Google Workspace</span></div>
+    <div class="skill-row"><div class="skill-dot"></div><span class="skill-name">Social Media Management &amp; Canva Design</span></div>
+    <div class="skill-row"><div class="skill-dot"></div><span class="skill-name">Project Management &amp; Team Leadership</span></div>
+  </div>
+
+  <div style="margin-top:2.5rem">
+    <div class="sec-label">Academics</div>
+    <div class="sec-title serif">Education</div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-deg">Master of Social Work (MSW)</div>
+        <div class="edu-inst">MGCGV (Mahatma Gandhi Chitrakoot Gramodaya Vishwavidyalaya)</div>
+        <div class="edu-meta">2023 – 2025 · CGPA 7.8</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-deg">PG Diploma in Computer Applications (PGDCA)</div>
+        <div class="edu-inst">Makhanlal Chaturvedi National University</div>
+        <div class="edu-meta">2021 – 2022 · 7.5 CGPA · First Division</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-deg">Bachelor of Commerce (B.Com)</div>
+        <div class="edu-inst">Awadhesh Pratap Singh University (APSU)</div>
+        <div class="edu-meta">2017 – 2020 · 67% · First Division</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-deg">12th Grade · Commerce</div>
+        <div class="edu-inst">Govt. Ex. Hr. Sec. School, Nagod (M.P. Board)</div>
+        <div class="edu-meta">2016 – 2017 · First Division</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+    <div>
+      <div class="sec-label">Recognition</div>
+      <div class="sec-title serif" style="font-size:1.2rem">Certifications</div>
+      <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff">
+        <div style="padding:.85rem 1rem;border-bottom:1px solid var(--border)">
+          <div style="font-size:13px;font-weight:500">Harvard Youth Leadership Program</div>
+          <div style="font-size:11px;color:var(--gold);margin-top:.15rem">Certificate · 2023</div>
+        </div>
+        <div style="padding:.85rem 1rem">
+          <div style="font-size:13px;font-weight:500">UNICEF Digital Productivity &amp; Financial Literacy</div>
+          <div style="font-size:11px;color:var(--gold);margin-top:.15rem">Certificate · 2023</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="sec-label">Communication</div>
+      <div class="sec-title serif" style="font-size:1.2rem">Languages</div>
+      <div class="lang-row">
+        <div class="lang-chip">Hindi <span>Native</span></div>
+        <div class="lang-chip">English <span>Professional</span></div>
+        <div class="lang-chip">Bhojpuri <span>Regional</span></div>
+        <div class="lang-chip">Awadhi <span>Regional</span></div>
+        <div class="lang-chip">Bagheli <span>Regional</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="contact-section" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="sec-label">Get in touch</div>
+      <div class="sec-title serif" style="font-size:1.4rem;border:none;padding:0;margin-bottom:.75rem">Let's connect</div>
+      <p>Open to collaboration, fellowship opportunities, social sector roles, and community development projects across India.</p>
+      <div class="cinfo-row"><div class="cinfo-icon">📞</div><div><span class="cinfo-label">Phone</span><span class="cinfo-val">9589624981</span></div></div>
+      <div class="cinfo-row"><div class="cinfo-icon">✉️</div><div><span class="cinfo-label">Email</span><span class="cinfo-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c1d111d125217090f140b1d141d4e48494f3c1b111d1510521f1311">[email&#160;protected]</a></span></div></div>
+      <div class="cinfo-row"><div class="cinfo-icon">📍</div><div><span class="cinfo-label">Location</span><span class="cinfo-val">Nagod, Satna, Madhya Pradesh</span></div></div>
+      <div class="cinfo-row"><div class="cinfo-icon">🏢</div><div><span class="cinfo-label">Currently</span><span class="cinfo-val">Gandhi Fellow · Piramal Foundation, Assam</span></div></div>
+      <div class="social-row">
+        <a href="https://linkedin.com/in/aman-kushwaha-b07b641ba" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="/cdn-cgi/l/email-protection#40212d212e6e2b353328372128217274757300272d21292c6e232f2d" class="social-btn">Email</a>
+        <a href="tel:9589624981" class="social-btn">Call</a>
+      </div>
+    </div>
+    <div>
+      <div class="sec-label">Send a message</div>
+      <div class="sec-title serif" style="font-size:1.4rem;border:none;padding:0;margin-bottom:1rem">Contact form</div>
+      <div class="cf-form">
+        <div><label>Your name</label><input type="text" id="cf-name" placeholder="e.g. Priya Sharma"></div>
+        <div><label>Email address</label><input type="email" id="cf-email" placeholder="you@example.com"></div>
+        <div>
+          <label>Purpose</label>
+          <select id="cf-purpose">
+            <option value="">Select a reason…</option>
+            <option>Job / Fellowship Opportunity</option>
+            <option>Collaboration / Partnership</option>
+            <option>Project Consultation</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div><label>Message</label><textarea id="cf-msg" rows="4" placeholder="Write your message here…"></textarea></div>
+        <button class="cf-submit" onclick="submitForm()">Send Message →</button>
+        <div class="cf-success" id="cf-success">✓ Message sent! Aman will get back to you soon.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <strong>Aman Kushwaha</strong> · Social Work Professional · Gandhi Fellow Batch 17<br>
+  <span style="margin-top:.3rem;display:block">linkedin.com/in/aman-kushwaha-b07b641ba · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3a5b575b5414514f49524d5b525b080e0f097a5d575b535614595557">[email&#160;protected]</a> · 9589624981</span>
+  <span style="margin-top:.5rem;display:block;font-size:11px;opacity:.5">© 2026 Aman Kushwaha · All rights reserved</span>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function submitForm(){
+  var name=document.getElementById('cf-name').value.trim();
+  var email=document.getElementById('cf-email')
